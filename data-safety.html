@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="STBPlay data safety summary: what data the app handles, what is shared, how it is protected and how to delete it.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<title>STBPlay Data Safety</title>
+<style>
+
+:root{color-scheme:light dark;--bg:#f4f7fb;--paper:#fff;--ink:#162238;--muted:#52627a;--line:#dbe4ef;--accent:#006db8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:#091321;color:#fff;padding:44px 24px 38px;border-bottom:4px solid #12a3ff}.wrap{max-width:860px;margin:auto}.brand{font-size:26px;font-weight:800;letter-spacing:-.6px}.brand span{color:#22aaff}h1{font-size:clamp(30px,6vw,44px);line-height:1.2;margin:20px 0 12px}.lede{max-width:650px;color:#b9c8dc;margin:0}main{padding:30px 22px 50px}.paper{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,4vw,42px)}.policy{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:0}footer{font-size:14px;color:var(--muted);padding:25px 3px}a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px solid #12a3ff;outline-offset:4px}.footlinks{display:flex;flex-wrap:wrap;gap:12px 24px}@media(prefers-color-scheme:dark){:root{--bg:#0a101b;--paper:#101c2e;--ink:#ecf2fb;--muted:#a8b8ce;--line:#2c3c52;--accent:#49b7ff}}@media print{body{background:#fff;color:#111;font-size:11pt}header{background:none;color:#111;padding:0;border:none}.lede,.brand{display:none}main{padding:15px 0}.paper{border:0;padding:0}footer{color:#333}}
+
+h2{margin-top:1.6em}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:rgba(18,163,255,.08)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">STB<span>Play</span></div><h1>Data safety</h1><p class="lede">A plain summary of how STBPlay handles data. Published by LoopX Studio. The full <a href="privacy-policy.html" style="color:#7fd0ff">privacy policy</a> has the details.</p></div></header>
+<main class="wrap"><article class="paper" aria-label="STBPlay data safety">
+<h2>At a glance</h2>
+<ul>
+<li>The publisher does not collect your personal data. There is no STBPlay account, no publisher server, no advertising and no analytics.</li>
+<li>The publisher does not share your data with third parties.</li>
+<li>Payments are handled entirely by Google Play. STBPlay never sees or stores your card or payment details.</li>
+<li>You can delete your local data at any time in Settings.</li>
+</ul>
+<h2>What stays on your device</h2>
+<table>
+<tr><th>Data</th><th>Why</th><th>Where</th></tr>
+<tr><td>Source profiles, provider login details, favorites, recent viewing, playback positions, preferences</td><td>So the app works between sessions</td><td>Private app storage on your device. Sensitive fields are encrypted with a key protected by Android Keystore. Excluded from cloud backup.</td></tr>
+<tr><td>Free-trial start date</td><td>So the trial does not restart after a reinstall</td><td>Private app storage and Android Block Store on your device. Never sent to the publisher.</td></tr>
+<tr><td>Optional app PIN</td><td>To lock the app</td><td>A salted verifier is stored, not the PIN itself.</td></tr>
+</table>
+<h2>What goes to other parties</h2>
+<ul>
+<li><strong>Your chosen provider and its content servers:</strong> login details, requests for channels or titles, your IP address and normal technical headers, so playback can work. These are independent services with their own policies.</li>
+<li><strong>Google Play:</strong> handles purchase of the optional STBPlay Pass under Google's own terms.</li>
+</ul>
+<h2>Security practices</h2>
+<ul>
+<li>HTTPS is used whenever your provider supports it. The app does not disable certificate checks and does not silently follow an HTTPS-to-HTTP redirect. Plain HTTP sources are not encrypted in transit.</li>
+<li>Sensitive stored data is encrypted on the device (AES-GCM, Android Keystore). This does not protect a rooted or compromised device.</li>
+<li>No location, contacts, camera, microphone or advertising-ID permissions are requested.</li>
+</ul>
+<h2>Deleting your data</h2>
+<ul>
+<li>Settings: <em>Clear watch history</em> or <em>Clear all local data</em>.</li>
+<li>Or clear storage in Android's app settings, or uninstall the app.</li>
+<li>Your provider account and any server-held data are managed by that provider.</li>
+</ul>
+<h2>Questions</h2>
+<p>Email <a href="mailto:krsptrbeez@gmail.com">krsptrbeez@gmail.com</a> and mention STBPlay. Do not send provider passwords or private playlist URLs.</p>
+</article>
+<footer><p>This page contains no analytics, tracking scripts or embedded third-party resources.</p><div class="footlinks"><a href="privacy-policy.html">Privacy policy</a><a href="mailto:krsptrbeez@gmail.com">Privacy and support contact</a></div></footer></main>
+</body></html>

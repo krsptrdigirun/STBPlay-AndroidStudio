@@ -1,59 +1,43 @@
-# STBPlay — Android TV IPTV player starter
+# Host the matching privacy policy on GitHub Pages
 
-STBPlay is an original Android application project intended for Android TV / Google TV first, with phone/tablet support where practical. It uses Kotlin, Jetpack Compose, and AndroidX Media3 (ExoPlayer). No channel list, playlist, subscription, credentials, or copyrighted artwork is bundled.
+The app retains its full policy offline in Settings → Privacy policy. Publishing a website is needed for the Console URL; the app does not need to open it.
 
-## Current starter functionality
+## Free hosting
 
-- Android TV launcher entry and phone/tablet launcher entry
-- Original dark STBPlay interface with sidebar navigation and remote-focus styling
-- M3U/M3U8 playlist loading from an HTTP(S) URL (HTTP is allowed for providers that require it; prefer HTTPS when supported)
-- Common `#EXTINF` fields: title, `tvg-id`, `tvg-logo`, and `group-title`
-- Xtream Codes API requests for live channels, movies, and series catalogues
-- Live channel search, simple favorites (in-memory for this starter), recent items (in-memory)
-- Media3 / ExoPlayer playback screen with playback controls and basic error reporting
-- Settings, TV Guide placeholder, and Movies / Series catalogue screens
+1. Sign into GitHub and create a public repository, for example `stbplay-privacy`. A GitHub Free account can use Pages from a public repository.
+2. Upload **only** the contents of `publishing/privacy-site/` to the repository root. The required files are `index.html`, `privacy-policy.html` and `.nojekyll`. No Android source, keystore, logs or provider details belong in this repository.
+3. Commit the files to the default branch, commonly `main`.
+4. Repository Settings → Pages → Build and deployment → Deploy from a branch. Choose that branch and `/ (root)`, then Save.
+5. Wait for GitHub's deployment to complete. Open the URL shown under Pages. A project site normally uses `https://YOUR-USERNAME.github.io/stbplay-privacy/`.
+6. Enable Enforce HTTPS where available. Check the deployed page in a private browser window while signed out of GitHub. It must show the complete policy without login, cookies/consent walls or geographic restrictions. Do not submit a GitHub repository/blob/edit URL or a PDF URL.
+7. Paste the public page URL into Play Console's Privacy policy field. Optionally record it in `publicPrivacyPolicyUrl` in `publishing.properties`; leave `privacyPolicyUrl=` blank to keep the app policy offline-only as requested.
 
-## Important scope notes
+## Keeping the app and page identical
 
-This is a **buildable first project foundation**, not yet a feature-complete replacement for IPTVnator. In particular:
+The authoritative text is `app/src/main/assets/privacy_policy.txt`. Publisher/support tokens come from `publishing.properties`.
 
-- XMLTV parsing and a full timeline EPG grid are not implemented yet.
-- Stalker / Ministra portal authentication and playback are not implemented yet.
-- Xtream series detail / episode resolution is not implemented yet; the initial series call lists the catalogue only.
-- Local-file playlist picker, persistent Room/DataStore storage, logos/artwork loading, playback resume, catch-up/timeshift, TMDB enrichment, downloads, and production-grade error handling are follow-up tasks.
-- Stream compatibility depends on the provider, format, codecs, DRM, and Android device.
-- Xtream URLs commonly embed credentials in stream URLs; avoid sharing logs or screenshots containing private account details. Production hardening should use safer credential handling and redact URLs.
+Run either:
 
-## Build with Android Studio
+```sh
+./gradlew exportPrivacyPolicy
+```
 
-1. Install Android Studio with JDK 17 and Android SDK Platform 35 (or let Android Studio install the requested SDK).
-2. Extract/open this `STBPlay` folder in Android Studio using **Open**.
-3. Allow Gradle sync and dependency downloads.
-4. Choose an Android TV emulator (or a phone/tablet emulator) and press **Run**.
-5. In STBPlay, open **Sources** and enter an M3U URL or Xtream Codes server URL, username, and password for a provider you are authorized to use.
+or, with Python 3:
 
-To build an APK in Android Studio, choose **Build → Build Bundle(s) / APK(s) → Build APK(s)**. The debug APK is usually produced under `app/build/outputs/apk/debug/`.
+```sh
+python3 tools/export_privacy_policy.py
+```
 
-## Google AI Studio workflow
+Both export the identical policy body to the two HTML files. After any policy edit, regenerate the website, build a new app version, and replace the deployed HTML. Do not edit just one copy.
 
-Google AI Studio can help generate or revise individual Kotlin files, but it is not a replacement for Android Studio's Android Gradle build, emulator, or APK-signing workflow. Keep this folder as the source of truth; apply AI-generated edits here, then sync/build/test in Android Studio.
+The HTML has no JavaScript, forms, analytics, advertising, embedded resources or third-party fonts. Its CSS is inline. The policy discloses that GitHub itself logs visitor IP addresses for website security. The support email link opens the user's email client only when selected.
 
-## Dependencies
+## Final checks
 
-- Android Gradle Plugin 8.7.3
-- Kotlin 2.0.21 + Compose compiler plugin
-- Compose BOM 2024.12.01
-- AndroidX Media3 1.5.1
-- Minimum SDK 23; compile/target SDK 35
+- Policy says STBPlay and LoopX Studio and contains the correct support email.
+- Effective date and data practices match the app you are submitting.
+- Page displays correctly on a phone and desktop, supports zoom and dark mode, and is printable.
+- Both HTML routes return the policy, and HTTPS is valid.
+- No provider passwords, real MAC identifiers, private playlist URLs, signing keys or logs appear in the repository.
 
-Dependency versions may need updating to match your installed Android Studio / SDK setup.
-
-## License and relationship to IPTVnator
-
-This project was authored as a new Android implementation using IPTVnator as a **functional reference**; it does not intentionally copy IPTVnator source files or branding. The reference archive's `LICENSE.md` states MIT License, copyright (c) 2019–2026 4gray, with notice-retention conditions for reused portions. If you later copy or adapt any covered IPTVnator source into this project, retain the required copyright and license notice for those portions and review third-party dependency licenses. STBPlay is not affiliated with IPTVnator or its authors.
-
-Use this app only with playlists and streams you have permission to access.
-
-## V0.2 review changes
-
-See `CHANGELOG.md`. The source includes improvements to Xtream categories, series episode selection, M3U parsing, favorite persistence and error privacy. XMLTV and Stalker/Ministra remain planned. A Gradle wrapper properties file is provided, but the wrapper JAR and launch scripts could not be bundled in this environment. In Android Studio, use a locally installed Gradle 8.10.2 to sync, or generate the wrapper with `gradle wrapper --gradle-version 8.10.2` using a local Gradle installation. This project has not been compiled or device-tested here.
+Sources: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https), [Play privacy-policy requirements](https://support.google.com/googleplay/android-developer/answer/10144311).

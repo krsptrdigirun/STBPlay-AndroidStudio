@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="STBPlay privacy policy: provider connections, local storage, permissions and deletion.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<title>STBPlay Privacy Policy</title>
+<style>
+:root{color-scheme:light dark;--bg:#f4f7fb;--paper:#fff;--ink:#162238;--muted:#52627a;--line:#dbe4ef;--accent:#006db8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{background:#091321;color:#fff;padding:44px 24px 38px;border-bottom:4px solid #12a3ff}.wrap{max-width:860px;margin:auto}.brand{font-size:26px;font-weight:800;letter-spacing:-.6px}.brand span{color:#22aaff}h1{font-size:clamp(30px,6vw,44px);line-height:1.2;margin:20px 0 12px}.lede{max-width:650px;color:#b9c8dc;margin:0}main{padding:30px 22px 50px}.paper{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,4vw,42px)}.policy{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:0}footer{font-size:14px;color:var(--muted);padding:25px 3px}a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px solid #12a3ff;outline-offset:4px}.footlinks{display:flex;flex-wrap:wrap;gap:12px 24px}@media(prefers-color-scheme:dark){:root{--bg:#0a101b;--paper:#101c2e;--ink:#ecf2fb;--muted:#a8b8ce;--line:#2c3c52;--accent:#49b7ff}}@media print{body{background:#fff;color:#111;font-size:11pt}header{background:none;color:#111;padding:0;border:none}.lede,.brand{display:none}main{padding:15px 0}.paper{border:0;padding:0}footer{color:#333}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">STB<span>Play</span></div><h1>Privacy policy</h1><p class="lede">How STBPlay handles provider connections, local information and your choices.</p></div></header>
+<main class="wrap"><article class="paper" aria-label="STBPlay privacy policy"><pre class="policy">Effective date: 18 October 2026 (version 0.8.2)
+App: STBPlay for Android TV and Google TV
+Publisher: LoopX Studio
+Privacy and support contact: krsptrbeez@gmail.com
+
+1. What STBPlay does
+STBPlay is a media player for playlists and provider accounts that you supply. It does not provide channels, movies, subscriptions or an STBPlay account. The publisher does not operate a server that receives your profiles, credentials or viewing history. The app contains no advertising SDK, analytics SDK or automatic crash-reporting service.
+
+2. Information you enter and requests to your provider
+Depending on the source you choose, you may enter a server/playlist URL, provider username and password, or a provider-registered MAC identifier. The MAC is manually entered; STBPlay does not read your device's hardware MAC, advertising ID or Android ID. These details may be transmitted to your chosen provider to authenticate and obtain its catalog and streams. Playlist and stream URLs may themselves contain credentials or tokens.
+Provider and content/CDN servers also receive the requests needed to browse categories, search supported catalogs, select episodes, load streams and retrieve media. Such requests can reveal the title or channel requested, searches sent to the provider, your IP address, session cookies and ordinary technical headers, including the emulated STB model used by Stalker portals. If a provider refuses the app's default request, STBPlay may retry using a generic player name (for example FFmpeg or VLC) as its user agent; this only changes what your provider sees. STBPlay does not sell this information or send it to a developer analytics service. External providers are independent; their own privacy policies, access rules and retention practices apply. The publisher cannot access or delete their records.
+
+3. Information stored on your device
+The app keeps saved source profiles, the last-used source details, cached catalog metadata, favorites, recent viewing, playback positions and player preferences in private app storage. Connecting does not create a named saved profile unless you use Save, but the app can retain last-used connection details for convenience. Sensitive profile fields, cached playback addresses and commands, favorites and recent-viewing payloads are encrypted locally with AES-GCM using a data key protected by Android Keystore. Catalog titles, groups, record identifiers and some settings/progress metadata are not a fully encrypted database. Local protection does not guarantee security on a rooted or compromised device.
+Optional app-opening PIN protection stores a salted PIN verifier rather than the PIN itself. It is an app lock, not an age-rating or content-filtering system. Session cookies are held in memory during use. App data is excluded from Android cloud backup and app-controlled device transfer; device/vendor behavior outside the app's control may differ.
+
+4. Permissions and device information
+STBPlay uses Internet access and network-state access for connections and playback. It does not request location, contacts, camera, microphone, advertising-ID or broad photo/media-library permissions. It does not infer or store your location. Network servers can nevertheless see an IP address and may process it under their own policies. If you choose to import subtitles, Android's document picker grants access to the selected file; its URI/name can be retained locally so it can be reused. STBPlay does not upload subtitle files to the publisher. No background TV-guide downloading is scheduled. The trial and pass notices are shown inside the app; STBPlay does not request notification permission.
+STBPlay Pass: after a 30-day free trial, playback requires an optional pass bought through Google Play Billing (1 month or 1 year, one payment, no automatic renewal). Google processes the payment under its own terms; STBPlay never receives or stores your card or payment details, and the publisher operates no payment server. So that the trial does not restart after a reinstall, STBPlay saves the trial start date in private app storage and in Android Block Store on your device. This date is not sent to the publisher.
+
+5. HTTP and HTTPS
+STBPlay supports HTTP and HTTPS sources. HTTPS encrypts the connection when supported by every endpoint involved. HTTP does not encrypt credentials, identifiers or viewing requests in transit. Local encryption does not make HTTP traffic encrypted. Use a provider with HTTPS support where available. The app does not disable TLS certificate validation and does not silently follow an HTTPS-to-HTTP redirect.
+
+6. Retention and deletion
+Local data stays on your device until removed through the app, Android's app-storage settings, or uninstalling. Deleting a saved profile removes its associated cached catalog, saved favorites and source history, and forgets matching last-used source credentials. Settings offers Clear watch history and Clear all local data. Clearing all local data removes profiles, credentials, favorites, viewing history, preferences and the optional PIN and closes the app; the current PIN is requested when the app lock is enabled. This does not cancel or delete an external provider account. Contact that provider about its account, subscription or server-held data. There is no publisher-operated STBPlay account to delete.
+
+7. Support messages
+If you email the support address, you voluntarily provide your email address and anything included in the message. The publisher uses these messages to answer support/privacy requests and retains them as needed to handle the request and applicable obligations. Email is handled by the publisher's email provider under its policies. Do not send provider passwords, MAC identifiers, private playlist URLs or unredacted logs. You may email the privacy contact to request deletion of support correspondence, subject to applicable retention obligations. STBPlay itself does not automatically send support messages or logs.
+
+8. This privacy-policy website
+The policy page contains no analytics, advertising, tracking scripts, forms or third-party fonts. If hosted on GitHub Pages, GitHub receives website requests and logs visitor IP addresses for security, as described in GitHub's privacy statement. This website hosting is separate from the app's provider connections. Reading the built-in policy in the app does not open this website. Visiting the published page separately uses your browser.
+
+9. Children and external content
+STBPlay is not specifically directed to children. It supplies no content and cannot guarantee the suitability of external catalogs. Parents should choose appropriate sources and control provider accounts. An optional PIN does not replace supervision or a provider's parental controls.
+
+10. Changes and contact
+The publisher will update this policy and Play Console disclosures if the app's behavior changes. The effective date identifies this revision. For privacy or support requests, contact krsptrbeez@gmail.com and identify STBPlay. The publisher does not have a remote copy of your local profiles or history to retrieve.
+</pre></article>
+<footer><p>This page contains no analytics, tracking scripts or embedded third-party resources.</p><div class="footlinks"><a href="data-safety.html">Data safety summary</a><a href="mailto:krsptrbeez@gmail.com">Privacy and support contact</a><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub hosting privacy statement</a></div></footer></main>
+</body></html>
